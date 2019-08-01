@@ -1,5 +1,3 @@
-// Select color input
-// Select size input
 
 var sizeForm = document.getElementById('sizePicker');                     // variable that holds the size form object
 var myTable = document.getElementById('pixelCanvas');                     // variable that hold the pixel Canvas Table
