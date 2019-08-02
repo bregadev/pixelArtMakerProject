@@ -3,7 +3,7 @@ var sizeForm = document.getElementById('sizePicker');                     // var
 var myTable = document.getElementById('pixelCanvas');                     // variable that hold the pixel Canvas Table
 var myColor = document.getElementById('colorPicker');                     // variabble that holds color input object 
 var defColor = 1;                                                          // variable that tracks weather a color has been  
-var colorTracker = 0;                                                      // variable used to track if squares have been colored
+var evtTracker = 0;                                                       // variable used to control when clearTable function runs
 
 function clearTable(){                                                    // function to clear colors from the squares
     var new_tbody = document.createElement('tbody');                      
@@ -16,7 +16,7 @@ function makeGrid() {                                                           
     var height = Number((document.getElementById('inputHeight')).value);         // variable that holds the number of rows
     var width = Number((document.getElementById('inputWidth')).value);           // variable that holds the number of columns
         for (var r = 0; r < height; r++){
-       var thisRow = myTable.insertRow();
+            var thisRow = myTable.insertRow();
             for (var c = 0; c < width; c++){
             thisRow.insertCell();
 
@@ -27,9 +27,10 @@ function makeGrid() {                                                           
  }
 
 sizeForm.addEventListener('submit',function(event){                                  // listener for the submit button
-    if (colorTracker === 0 ){
+    if (evtTracker === 0 ){
         event.preventDefault();
         makeGrid();
+        evtTracker = 1                                                             //update color tracker
         }
     else{
         event.preventDefault();
@@ -46,7 +47,7 @@ myTable.addEventListener('click',function(event){                               
         }
         else {
             myCell.style.background = myColor;
-            colorTracker = 1;
+            evtTracker = 1;
         }    
     }
     
