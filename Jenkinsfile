@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Initial') {
       steps {
-        s3Upload 'myrandombucketcubet'
+        s3Upload(bucket: 'myrandombucketcubet', file: 'index.html')
       }
     }
   }
