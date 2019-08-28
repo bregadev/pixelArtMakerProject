@@ -5,6 +5,7 @@ pipeline {
       steps {
         s3Upload(bucket: 'myrandombucketcubet', file: 'index.html')
         s3Upload(bucket: 'myrandombucketcubet', pathStyleAccessEnabled: true, file: 'styles.css')
+        s3Upload(bucket: 'myrandombucketcubet/images', pathStyleAccessEnabled: true, file: 'images/greyBackground.png')
       }
     }
   }
