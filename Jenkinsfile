@@ -1,9 +1,14 @@
 pipeline {
-  agent none
+  agent {
+    node {
+      label 'NoSeQue'
+    }
+
+  }
   stages {
     stage('Initial') {
       steps {
-        s3FindFiles(bucket: 'myrandombucketcubet', pathStyleAccessEnabled: true, onlyFiles: true)
+        s3Upload(bucket: 'myrandombucketcubet', file: 'index.html')
       }
     }
   }
