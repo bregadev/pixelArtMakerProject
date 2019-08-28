@@ -1,10 +1,13 @@
 body {
     text-align: center;
+    background-image: url(images/greyBackground.png);
+    background-blend-mode: screen,difference,lighten;
+    
 }
 
 h1 {
     font-family: Monoton;
-    font-size: 70px;
+    font-size: 35px;
     margin: 0.2em;
 }
 
