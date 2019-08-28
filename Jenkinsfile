@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    node {
-      label 'NoSeQue'
-    }
-
-  }
+  agent any
   stages {
     stage('Initial') {
       steps {
