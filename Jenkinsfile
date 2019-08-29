@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('Initial') {
+    stage('Build') {
       steps {
         s3Upload(bucket: 'myrandombucketcubet', file: 'index.html')
         s3Upload(bucket: 'myrandombucketcubet', pathStyleAccessEnabled: true, file: 'styles.css')
